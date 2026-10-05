@@ -114,14 +114,18 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0;font-size
 </style></head><body>';
     echo '<header class="top"><div class="wrap"><a class="brand" href="' . u('/') . '"><img src="https://exbridge.jp/images/logo-mark-128.png" width="34" height="34" alt="株式会社エクスブリッジ"><span>' . h(NAME) . '<small>取適法（旧 下請法）の対象判定と自己点検</small></span></a>';
     echo '<nav class="menu"><a href="' . u('/') . '">点検する</a><a href="' . u('/gimu/') . '">義務と禁止行為</a><a href="' . u('/about') . '">出典</a></nav>';
+    if (($_SERVER['HTTP_HOST'] ?? '') === 'kurage.exbridge.jp') {   // 当社の公開先だけ。配布版を置いたサイトには出さない
     echo '<!--kurage-only--><span class="promo"><a href="https://exbridge.jp/ai-it-komon.html?ref=ktoriteki-head-komon" target="_blank" rel="noopener">AI-IT顧問</a><a href="https://kurage.exbridge.jp/vibe-customize.html?ref=ktoriteki-head-vibe" target="_blank" rel="noopener">バイブカスタマイズ</a><a href="https://kurage.exbridge.jp/reseller.html?ref=ktoriteki-head-reseller" target="_blank" rel="noopener">販売代理店募集</a></span><!--/kurage-only-->';
+    }
     echo '</div></header><main class="wrap">' . $body . '</main>';
     echo '<footer><div class="wrap">';
     echo '<p>出典：公正取引委員会「<a href="' . SRC_GIMU . '" rel="noopener">委託事業者の義務</a>」、公正取引委員会 中部事務所「<a href="' . SRC_DECK . '" rel="noopener">中小受託取引適正化法（取適法）について</a>」（令和8年3月9日）。' . (int)substr(CHECKED, 5, 2) . '月' . (int)substr(CHECKED, 8, 2) . '日確認。</p>';
     echo '<p>このページは法律の助言ではありません。対象になるか・違反に当たるかの個別の判断は、公正取引委員会・中小企業庁の相談窓口か弁護士にご相談ください。入力した答えはブラウザの中だけで判定し、送信・保存しません。</p>';
     echo '<p><a href="https://exbridge.jp/?ref=ktoriteki">株式会社エクスブリッジ</a>（名古屋・業務システム開発）・<a href="' . SITE . '/kchingin.php/?ref=ktoriteki">Kurage 最低賃金・賃上げ助成金チェック</a>・<a href="' . SITE . '/kseidocal.php/?ref=ktoriteki">経営者の制度カレンダー</a>・<a href="https://exbridge.jp/ai-agent-automation.html?ref=ktoriteki-foot">AIエージェントで業務を自動化する</a></p>';
     echo '</div></footer>';
+    if (($_SERVER['HTTP_HOST'] ?? '') === 'kurage.exbridge.jp') {   // 計測も当社の公開先だけ
     echo '<img src="' . SITE . '/simpletrack.php?t=img&url=' . rawurlencode($url) . '&ref=' . rawurlencode((string)($_GET['ref'] ?? '')) . '" width="1" height="1" alt="" aria-hidden="true" style="position:absolute;left:-9999px">';
+    }
     if (($_SERVER['HTTP_HOST'] ?? '') === 'kurage.exbridge.jp') echo '<script src="https://kurage.exbridge.jp/partner-bar.js" defer></script>';
     echo '</body></html>';
 }
