@@ -119,7 +119,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0;font-size
     echo '<footer><div class="wrap">';
     echo '<p>出典：公正取引委員会「<a href="' . SRC_GIMU . '" rel="noopener">委託事業者の義務</a>」、公正取引委員会 中部事務所「<a href="' . SRC_DECK . '" rel="noopener">中小受託取引適正化法（取適法）について</a>」（令和8年3月9日）。' . (int)substr(CHECKED, 5, 2) . '月' . (int)substr(CHECKED, 8, 2) . '日確認。</p>';
     echo '<p>このページは法律の助言ではありません。対象になるか・違反に当たるかの個別の判断は、公正取引委員会・中小企業庁の相談窓口か弁護士にご相談ください。入力した答えはブラウザの中だけで判定し、送信・保存しません。</p>';
-    echo '<p><a href="https://exbridge.jp/?ref=ktoriteki">株式会社エクスブリッジ</a>（名古屋・業務システム開発）・<a href="' . SITE . '/kchingin.php/?ref=ktoriteki">Kurage 最低賃金・賃上げ助成金チェック</a>・<a href="https://exbridge.jp/ai-agent-automation.html?ref=ktoriteki-foot">AIエージェントで業務を自動化する</a></p>';
+    echo '<p><a href="https://exbridge.jp/?ref=ktoriteki">株式会社エクスブリッジ</a>（名古屋・業務システム開発）・<a href="' . SITE . '/kchingin.php/?ref=ktoriteki">Kurage 最低賃金・賃上げ助成金チェック</a>・<a href="' . SITE . '/kseidocal.php/?ref=ktoriteki">経営者の制度カレンダー</a>・<a href="https://exbridge.jp/ai-agent-automation.html?ref=ktoriteki-foot">AIエージェントで業務を自動化する</a></p>';
     echo '</div></footer>';
     echo '<img src="' . SITE . '/simpletrack.php?t=img&url=' . rawurlencode($url) . '&ref=' . rawurlencode((string)($_GET['ref'] ?? '')) . '" width="1" height="1" alt="" aria-hidden="true" style="position:absolute;left:-9999px">';
     if (($_SERVER['HTTP_HOST'] ?? '') === 'kurage.exbridge.jp') echo '<script src="https://kurage.exbridge.jp/partner-bar.js" defer></script>';
